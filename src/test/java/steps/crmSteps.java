@@ -1,18 +1,23 @@
 package steps;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class crmSteps {
+	WebDriver driver;
 	SeleniumDriverInfo sw;
-	
-	
+	loginsteps	login;
 	
 	
 	public crmSteps() {
-	sw = new SeleniumDriverInfo();	
-	
+		System.setProperty("webdriver.chrome.driver", "‪C:\\Users\\Dell\\Downloads\\chromedriver.exe");
+		driver= new ChromeDriver();
+		sw = new SeleniumDriverInfo(driver);	
+		login = new loginsteps(driver);
 	}
 
 	@Given("user is on Application home page")
@@ -24,12 +29,13 @@ public class crmSteps {
 
 	@Given("Login button is present on screen")
 	public void login_button_is_present_on_screen() {
-	    // Write code here that turns the phrase above into concrete actions
+		//login.userName
+		
 	}
 
 	@When("user clicks on Login button")
 	public void user_clicks_on_login_button() {
-	    // Write code here that turns the phrase above into concrete actions
+		login.clickLogin();
 	}
 
 	@Then("user is show Login screen")
@@ -40,11 +46,14 @@ public class crmSteps {
 	@When("user enters {string} in username field")
 	public void user_enters_in_username_field(String string) {
 	    // Write code here that turns the phrase above into concrete actions
+		
+		login.enterUserName();
 	}
 
 	@When("user enters {string} in password field")
 	public void user_enters_in_password_field(String string) {
 	    // Write code here that turns the phrase above into concrete actions
+		login.enterPassword();
 	}
 
 	@When("user clicks Login button")

@@ -7,9 +7,7 @@ public class SeleniumDriverInfo {
 	
 	WebDriver driver;
 
-	public SeleniumDriverInfo() {
-		super();
-	}
+	
 
 	public SeleniumDriverInfo(WebDriver driver) {
 		super();
@@ -20,5 +18,8 @@ public class SeleniumDriverInfo {
 //		System.setProperty("webdriver.chrome.driver","‪C:\\Users\\Dell\\Downloads\\chromedriver.exe");
 	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	
+	}
+	public void closeApp() {
+		driver.quit();
 	}
 }

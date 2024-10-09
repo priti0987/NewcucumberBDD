@@ -7,9 +7,9 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-	  features = ".\\src\\test\\java\\feature\\OrangeLogin.feature",
+	  features = ".\\src\\test\\java\\feature\\ComplexLogin.feature",
 	  glue = "steps", 
-	  plugin = {"pretty","html:Report2"},
+	  plugin = {"pretty","html:Report1"},
 	  //dryRun=false,
 	  monochrome=true
 	 // dryRun = true,
